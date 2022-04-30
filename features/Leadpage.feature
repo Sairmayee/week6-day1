@@ -27,5 +27,10 @@ Then Select Lead and click Delete
 When Find Leads
 Then Error message should be displayed 
 
+Scenario: TC006_Edit lead
+When Click on Find Lead
+Then Enter Phone number and click Find Leads
+Then Select Lead and click Edit
+Then Edit details and submit
 
 

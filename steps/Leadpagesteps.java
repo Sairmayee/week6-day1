@@ -75,7 +75,7 @@ public class Leadpagesteps {
 	public void leadSubmit() {
 
 		driver.findElement(By.name("submitButton")).click();
-
+		driver.close();
 	}
 
 	@When("Click on Find Lead")
@@ -98,6 +98,7 @@ public class Leadpagesteps {
 	@When("Select Lead and click Duplicate Lead button")
 	public void selectLeadandDuplicate() {
 		driver.findElement(By.linkText("Duplicate Lead")).click();
+		
 	}
 	
 	@Then("Select Lead and click Delete")
@@ -120,5 +121,19 @@ public class Leadpagesteps {
 		} else {
 			System.out.println("Text not matched");
 		}
+		driver.close();
+	}
+	
+	@Then("Select Lead and click Edit")
+	public void selectLeadandEdit() {
+		
+		driver.findElement(By.linkText("Edit")).click();
+	}
+	@Then("Edit details and submit")
+	public void editDetailsandSubmit() {
+		driver.findElement(By.id("updateLeadForm_companyName")).clear();
+		driver.findElement(By.id("updateLeadForm_companyName")).sendKeys("Cucumber");
+		driver.findElement(By.name("submitButton")).click();
+		driver.close();
 	}
 }
